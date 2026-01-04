@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import PageLoader from "../components/PageLoader.jsx";
 import useAuthUser from "../hooks/useAuthUser.js";
 import Layout from "../components/Layout.jsx";
-import { useThemeStore } from "../store/useThemeStore.js";
 import { Navigate } from "react-router-dom";
 import HomePage from "../pages/HomePage.jsx";
 import SignUpPage from "../pages/SignUpPage.jsx";
@@ -13,7 +12,6 @@ import CallPage from "../pages/CallPage.jsx";
 import ChatPage from "../pages/ChatPage.jsx";
 const Mainroutes = () => {
   const { isLoading, authUser } = useAuthUser();
-  const { theme } = useThemeStore();
 
   const isAuthenticated = Boolean(authUser);
   const isOnboarded = authUser?.isOnboarded;

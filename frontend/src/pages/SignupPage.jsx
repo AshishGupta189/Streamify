@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import {ShipWheelIcon} from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import  useSignUp  from '../hooks/useSignup';
-const SignupPage = () => {
+const SignUpPage = () => {
   const {register,handleSubmit,reset}=useForm();
   const { isPending, error, signupMutation } = useSignUp();  
   return (
@@ -139,4 +139,4 @@ const SignupPage = () => {
   );
 }
 
-export default SignupPage
+export default SignUpPage
