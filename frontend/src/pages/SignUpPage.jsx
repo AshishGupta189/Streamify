@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import {ShipWheelIcon} from 'lucide-react';
 import { useForm } from 'react-hook-form';
-import  useSignUp  from '../hooks/useSignup';
+import  useSignUp  from '../hooks/useSignUp';
 const SignUpPage = () => {
   const {register,handleSubmit,reset}=useForm();
   const { isPending, error, signupMutation } = useSignUp();  
