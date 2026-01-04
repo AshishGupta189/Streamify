@@ -1,0 +1,118 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* ================= ROOT ================= */
+.str-chat {
+  height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+/* ================= HEADER ================= */
+.chat-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #3f766f;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+}
+.str-chat__channel-header-title { color: white; }
+.str-chat__channel-header-subtitle { color: #d1fae5; font-size: 12px; }
+
+/* ================= MESSAGE LIST ================= */
+.str-chat__list {
+  padding: 16px;
+  background: transparent;
+}
+
+/* ================= MESSAGE ROW ================= */
+.str-chat__message {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+/* ================= AVATAR ================= */
+.str-chat__avatar-image {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+.str-chat__message--other .str-chat__avatar { margin-right: 8px; }
+
+/* ================= MESSAGE INNER ================= */
+.str-chat__message-inner {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+}
+
+/* ALIGN */
+.str-chat__message--me { justify-content: flex-end; }
+.str-chat__message--me .str-chat__message-inner { align-items: flex-end; }
+
+/* ================= MESSAGE BUBBLE ================= */
+.str-chat__message-bubble {
+  position: relative;
+  background: #c39393;
+  padding: 8px 10px 18px;
+  border-radius: 8px;
+}
+.str-chat__message--me .str-chat__message-bubble {
+  background: #a5c38e;
+  border-bottom-right-radius: 2px;
+}
+.str-chat__message--other .str-chat__message-bubble {
+  border-bottom-left-radius: 2px;
+}
+
+/* ================= MESSAGE TEXT ================= */
+.str-chat__message-text-inner p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.str-chat__message-url-link { color: #2563eb; word-break: break-word; }
+
+/* ================= METADATA (TIME / NAME) ================= */
+.str-chat__message-metadata {
+  display: none;
+}
+.str-chat__message-simple-name { display: none; }
+
+/* ================= REACTIONS ================= */
+.str-chat__message-reactions-host { 
+  display:none; }
+.str-chat__reaction-list {
+  display: none;
+}
+.str-chat__message--me .str-chat__reaction-list { background: #dcf8c6; align-self: flex-end; }
+
+/* ================= ACTIONS (3 DOTS) ================= */
+.str-chat__message-simple__actions {
+  display: none;
+}
+
+/* ================= INPUT BAR ================= */
+.str-chat__message-input {
+  background: #3f766f;
+  border-top: 1px solid #ddd;
+  padding: 6px 8px;
+}
+.str-chat__message-input-inner { 
+  
+  display: flex; align-items: center; gap: 8px; }
+.str-chat__message-textarea-container { border: #c8ece8 2px solid; border-radius: 5px;flex: 1; }
+.str-chat__textarea textarea {
+  min-height: 40px !important;
+  max-height: 120px;
+  padding: 8px 12px;
+  font-size: 14px;
+  width: 100%;
+  resize: none;
+}
+.str-chat__send-button { color: #0ee5cc; }
