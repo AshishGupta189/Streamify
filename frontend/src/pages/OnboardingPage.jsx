@@ -20,12 +20,13 @@ const OnboardingPage = () => {
   const { mutate: onboardingMutation, isPending } = useMutation({
     mutationFn: completeOnboarding,
     onSuccess: () => {
-      toast.success("Profile onboarded successfully");
+      //toast.success("Profile onboarded successfully");
       queryClient.invalidateQueries({ queryKey: ["authUser"] });
     },
 
     onError: (error) => {
-      toast.error(error.response.data.message);
+      //toast.error(error.response.data.message);
+      console.error("Onboarding error:", error);
     },
   });
 
@@ -40,7 +41,7 @@ const OnboardingPage = () => {
     const randomAvatar = `https://avatar.iran.liara.run/public/${idx}.png`;
 
     setFormState({ ...formState, profilePic: randomAvatar });
-    toast.success("Random profile picture generated!");
+    //toast.success("Random profile picture generated!");
   };
 
   return (
